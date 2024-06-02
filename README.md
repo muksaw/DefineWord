@@ -8,4 +8,4 @@
   - Name (github id)
   - Name (github id)
   - Name (github id)
-- For more information about how this application works, and the functionality behind it, visit our [wiki](https://github.com/muksaw/StreamingExtension/wiki).
+- For more information about how this application works, and the functionality behind it, visit our [**wiki**](https://github.com/muksaw/StreamingExtension/wiki).
