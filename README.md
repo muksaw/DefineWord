@@ -4,7 +4,7 @@
 - **Creators:**
   - Mukul Sauhta (muksaw)
   - James Kocak (jokocak)
-  - Name (github id)
+  - Jacob Kocak (Jabob0)
   - Name (github id)
   - Name (github id)
   - Name (github id)
