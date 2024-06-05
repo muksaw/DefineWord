@@ -5,7 +5,7 @@
   - Mukul Sauhta (muksaw)
   - James Kocak (jokocak)
   - Jacob Kocak (Jabob0)
-  - Name (github id)
+  - Harrison Hubbard (harrisoncodehub) 
   - Name (github id)
   - Name (github id)
 - For more information about how this application works, and the functionality behind it, visit our [**wiki**](https://github.com/muksaw/StreamingExtension/wiki).
