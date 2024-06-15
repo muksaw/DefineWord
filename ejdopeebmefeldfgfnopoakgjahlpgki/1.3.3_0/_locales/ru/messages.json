@@ -1,0 +1,32 @@
+{
+   "display": {
+      "message": "Показать: "
+   },
+   "favoriteStreamers": {
+      "message": "Избранные стримеры"
+   },
+   "favorites": {
+      "message": "Избранное"
+   },
+   "followedStreamers": {
+      "message": "Отслеживаемые стримеры"
+   },
+   "hide": {
+      "message": "Скрыть: "
+   },
+   "login": {
+      "message": "Войти"
+   },
+   "logout": {
+      "message": "Выход"
+   },
+   "manifestDescription": {
+      "message": "Всегда следите за своими любимыми стримерами. Выбирайте своих избранных стримеров и сортируйте их!"
+   },
+   "noFavoritesStreaming": {
+      "message": "Ни один из избранных стримеров сейчас не ведёт трансляцию"
+   },
+   "otherStreamers": {
+      "message": "Другие стримеры"
+   }
+}

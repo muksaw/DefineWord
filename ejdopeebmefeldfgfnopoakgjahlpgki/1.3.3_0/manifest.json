@@ -1,0 +1,29 @@
+{
+   "action": {
+      "default_icons": {
+         "128": "./images/icon-128.png",
+         "16": "./images/icon-16.png",
+         "32": "./images/icon-32.png",
+         "48": "./images/icon-48.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "static/js/background.js"
+   },
+   "default_locale": "en",
+   "description": "__MSG_manifestDescription__",
+   "icons": {
+      "128": "./images/icon-128.png",
+      "16": "./images/icon-16.png",
+      "32": "./images/icon-32.png",
+      "48": "./images/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq/sKRiboVk6pNnI4kXRMeScYeS40Bg1SdGjPuUVmRFgV+dUg6meQ7iePSIWYZYtkKukxtjglNu6LzX8gKnxs1JdnyDCUTAw0x7E0BRSwTGIyz9GRd5hKioiFINwpRvWrmeZgjJqT7yHA7VwUAQkIRCYeEdfSw6yI6GdyDpUIDQXL+ip1OUSSenSQ+D2o0peduHZerdDFQhgIg+jhCKVkG9uR14J+U+mBym1IGSe10SXCNHY7FBq5XgCw7ZyOsZ0Ah88BGsPqEBy3G479kJSsUIwdUVrjrwwtaeMuYkBrnVaq5cQKZVVJtiq/NgjPdA3OeDYo51cVZV0pvVd3sNu2bQIDAQAB",
+   "manifest_version": 3,
+   "name": "Twitch Favorite Streamers",
+   "options_page": "options.html",
+   "permissions": [ "storage", "identity", "notifications", "alarms" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.3"
+}
