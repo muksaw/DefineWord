@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Word Definition",
+  "version": "1.0",
+  "description": "Get the definition of a highlighted word",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
