@@ -1,6 +1,6 @@
-# StreamingExtension
-- **Objective:** Develop a versatile and user-friendly Google Chrome extension widget designed to enable users to effortlessly monitor the live status of their favorite streamers across multiple streaming platforms.
-- **Motivation:** In the dynamic world of online streaming, keeping track of multiple favorite streamers across various platforms can be a challenging task for avid fans. Streaming platforms such as Twitch, YouTube Gaming, Facebook Gaming, and others host a multitude of content creators, each with their own unique schedules and streaming habits. For fans who follow several streamers, the process of checking each platform individually to see who is live can be time-consuming and inefficient
+#Define a Word Extension
+- **Objective:** Develop a simple and efficient Google Chrome extension that adds the option to define a word when it is highlighted, directly from the context menu.
+- **Motivation:** Enhancing the reading and learning experience by providing users with quick and easy access to word definitions without the need to leave the current webpage. This extension aims to streamline the process of looking up word meanings, thus saving time and making reading more enjoyable.
 - **Creators:**
   - Mukul Sauhta (muksaw)
   - James Kocak (jokocak)
@@ -8,4 +8,4 @@
   - Harrison Hubbard (harrisoncodehub) 
   - Alexander Johnston (ajohn432)
   - Karan Bhatt (karannbhatt)
-- For more information about how this application works, and the functionality behind it, visit our [**wiki**](https://github.com/muksaw/StreamingExtension/wiki).
+- For more information about how this application works, and the functionality behind it, visit our [**wiki**](https://github.com/muksaw/DefineWord/wiki).
