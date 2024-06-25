@@ -1,6 +1,6 @@
 # Define a Word Extension
 - **Objective:** Develop a simple and efficient Google Chrome extension that adds the option to define a word when it is highlighted, directly from the context menu.
-- **Motivation:** Enhancing the reading and learning experience by providing users with quick and easy access to word definitions without the need to leave the current webpage. This extension aims to streamline the process of looking up word meanings, thus saving time and making reading more enjoyable.
+- **Motivation:** Enhancing the reading and learning experience by providing users with quick and easy access to word definitions without the need to leave the current webpage. This extension aims to streamline the process of looking up word meanings, thus saving time and making reading more enjoyable. Furthermore, currently google only has a define option when visiting a google page, but as for non google websites, this will remedy that missing component.
 - **Creators:**
   - Mukul Sauhta (muksaw)
   - James Kocak (jokocak)
