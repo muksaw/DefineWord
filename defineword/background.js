@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "showPopup",
-    title: "Show Popup",
+    title: "Define '%s'",
     contexts: ["selection"]
   });
 });
@@ -24,7 +24,7 @@ function showPopup(selectedText) {
   const rect = range.getBoundingClientRect();
   
   const popup = document.createElement('div');
-  popup.style.position = 'fixed';
+  popup.style.position = 'absolute';
   popup.style.left = `${rect.left + window.scrollX}px`;
   popup.style.top = `${rect.bottom + window.scrollY + 10}px`; // 10px below the selection
   popup.style.width = '300px';
@@ -34,24 +34,49 @@ function showPopup(selectedText) {
   popup.style.boxShadow = '0 0 12px rgba(0, 0, 0, 0.2)';
   popup.style.zIndex = '10000';
   popup.style.fontFamily = 'Arial, sans-serif';
+
+  // Calculate the position of the popup
+  const viewportHeight = window.innerHeight;
+  const popupHeight = 200; // Estimate height of the popup (adjust as needed)
+  let topPosition;
+
+  if (rect.bottom + popupHeight + 20 > viewportHeight) {
+    // If not enough space below, position above the selection
+    topPosition = `${rect.top + window.scrollY - popupHeight - 10}px`;
+  } else {
+    // Otherwise, position below the selection
+    topPosition = `${rect.bottom + window.scrollY + 10}px`;
+  }
+
+  popup.style.left = `${rect.left + window.scrollX}px`;
+  popup.style.top = topPosition;
   
   // Create header for close button and information text
   const header = document.createElement('div');
   header.style.position = 'relative';
-  header.style.height = '30px'; // Adjust height as needed
+  header.style.height = '15px'; // Adjust height as needed
 
   const infoText = document.createElement('span');
-  infoText.innerText = 'Definitions from API library';
+  infoText.innerText = 'Definitions from ';
   infoText.style.position = 'absolute';
-  infoText.style.top = '15px';
+  infoText.style.top = '0px';
   infoText.style.fontSize = '12px';
   infoText.style.color = 'gray';
+
+  const apiLink = document.createElement('a');
+  apiLink.innerText = 'Free Dictionary API';
+  apiLink.href = 'https://dictionaryapi.dev/';
+  apiLink.target = '_blank';
+  apiLink.style.textDecoration = 'underline';
+  apiLink.style.color = 'gray';
+
+  infoText.appendChild(apiLink);
 
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '&times;'; // HTML entity for multiplication sign (X)
   closeBtn.style.position = 'absolute';
-  closeBtn.style.top = '5px'; // Adjust top position to move it up
-  closeBtn.style.right = '5px'; // Adjust right position to move it to the right edge
+  closeBtn.style.bottom = '-17px'
+  closeBtn.style.right = '0px'; // Adjust right position to move it to the right edge
   closeBtn.style.backgroundColor = 'transparent';
   closeBtn.style.color = 'gray';
   closeBtn.style.border = 'none';
@@ -67,11 +92,7 @@ function showPopup(selectedText) {
   header.appendChild(closeBtn);
   popup.appendChild(header);
 
-  // Add a thin line separator
-  const separator = document.createElement('hr');
-  separator.style.border = 'none';
-  separator.style.borderTop = '1px solid #ddd';
-  separator.style.margin = '10px 0';
+
 
   // Create content for popup text
   const content = document.createElement('div');
@@ -86,7 +107,7 @@ function showPopup(selectedText) {
   definition.innerText = 'Loading definitions...';
   
   popup.appendChild(content);
-  popup.appendChild(separator);
+
   popup.appendChild(definition);
   document.body.appendChild(popup);
 
@@ -104,6 +125,25 @@ function showPopup(selectedText) {
             definitionItem.style.marginTop = '5px';
             definitionItem.innerText = `${i + 1}. ${meaning.definition}`;
             definition.appendChild(definitionItem);
+
+            // Add example sentences if available
+            if (meaning.example) {
+              const exampleItem = document.createElement('div');
+              exampleItem.style.marginLeft = '15px';
+              exampleItem.style.fontSize = '14px';
+              exampleItem.style.fontStyle = 'italic';
+              exampleItem.innerText = `e.g., ${meaning.example}`;
+              definition.appendChild(exampleItem);
+            }
+
+            // Add a thin separator between definitions
+            if (i < Math.min(3, meanings.length) - 1) {
+              const thinSeparator = document.createElement('hr');
+              thinSeparator.style.border = 'none';
+              thinSeparator.style.borderTop = '1px solid #ddd';
+              thinSeparator.style.margin = '10px 0';
+              definition.appendChild(thinSeparator);
+            }
           }
         } else {
           definition.innerText = 'No definitions found';
